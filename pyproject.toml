@@ -52,12 +52,13 @@ classifiers = [
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
 
     "Topic :: Scientific/Engineering",
     "Topic :: Software Development :: Libraries :: Application Frameworks",
     "Topic :: Software Development :: User Interfaces",
 ]
-requires-python = ">=3.8, <3.11"
+requires-python = ">=3.8, <3.12"
 dependencies = [
     "cycler>=0.10.0",
     "entrypoints>=0.3",
@@ -69,12 +70,12 @@ dependencies = [
     "matplotlib>=3.4.3",
     "numpy>=1.21.3, < 2",
     "pyqtgraph>=0.13.0",
-    "PySide2==5.15.2.1",
     "rpyc>=5.0.1, <6",
     "ruamel.yaml>=0.17.16",
     "scipy>=1.7.1",
     "jsonschema>=4.2.1",
     "qtconsole>=5.5.0",
+    "qtpy>=2.4.2",
 ]
 
 [project.scripts]
