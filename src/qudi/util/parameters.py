@@ -10,7 +10,7 @@ Parameters
     An integer type represented by a scientific spinbox widget.
 :float: :class:`~qudi.util.widgets.scientific_spinbox.ScienDSpinbox`
     A floating-point type represented by a double precision scientific spinbox widget.
-:str: :class:`~PySide2.QtWidgets.QLineEdit`
+:str: :class:`~qtpy.QtWidgets.QLineEdit`
     A string type represented by a QLineEdit widget.
 :complex: :class:`~qudi.util.widgets.literal_lineedit.ComplexLineEdit`
     A complex number type represented by a custom ComplexLineEdit widget.
@@ -30,7 +30,7 @@ Notes
 Here defined are also custom generic types that can be used like any other type from
 the typing module.
 Arguments annotated with these types are represented with the following widgets:
-    FilePath: PySide2.QtWidgets.QLineEdit
+    FilePath: qtpy.QtWidgets.QLineEdit
 
 Any other type annotation that can not be mapped to a simple builtin or a custom generic type
 (see above) will result in no corresponding widget (None).
@@ -57,7 +57,7 @@ __all__ = ['FilePath', 'RealNumber', 'ParameterWidgetMapper']
 import inspect
 import typing
 from os import PathLike
-from PySide2 import QtWidgets
+from qtpy import QtWidgets
 from typing import Callable, Any, Set, FrozenSet, MutableSequence, Mapping, Tuple, Dict, Type, Union
 from typing import get_origin, get_args, Iterable, Sequence
 

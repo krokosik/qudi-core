@@ -24,7 +24,7 @@ __all__ = ('get_remote_module_instance', 'BaseServer', 'RemoteModulesServer', 'Q
 import ssl
 import rpyc
 import weakref
-from PySide2 import QtCore
+from qtpy import QtCore
 from urllib.parse import urlparse
 from rpyc.utils.authenticators import SSLAuthenticator
 
@@ -273,7 +273,7 @@ class QudiNamespaceServer(BaseServer):
             Server name (used as name for the associated QThread).
         port : int
             Port number the RPyC server should listen to.
-        parent : PySide2.QtCore.QObject, optional
+        parent : qtpy.QtCore.QObject, optional
             Parent Qt QObject.
 
         Returns
