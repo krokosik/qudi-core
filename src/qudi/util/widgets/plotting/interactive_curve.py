@@ -51,15 +51,15 @@ class PlotEditorWidget(QtWidgets.QWidget):
 
         # Generate labels
         x_label = QtWidgets.QLabel('Horizontal Axis:')
-        x_label.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+        x_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight | QtCore.Qt.AlignmentFlag.AlignVCenter)
         y_label = QtWidgets.QLabel('Vertical Axis:')
-        y_label.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+        y_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight | QtCore.Qt.AlignmentFlag.AlignVCenter)
         label_label = QtWidgets.QLabel('Label')
-        label_label.setAlignment(QtCore.Qt.AlignCenter)
+        label_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         unit_label = QtWidgets.QLabel('Units')
-        unit_label.setAlignment(QtCore.Qt.AlignCenter)
+        unit_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         range_label = QtWidgets.QLabel('Range')
-        range_label.setAlignment(QtCore.Qt.AlignCenter)
+        range_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         # Generate editors
         self.x_label_lineEdit = QtWidgets.QLineEdit()
         self.x_label_lineEdit.setMinimumWidth(50)

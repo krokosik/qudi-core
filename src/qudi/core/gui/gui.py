@@ -53,15 +53,15 @@ class SystemTrayIcon(QtWidgets.QSystemTrayIcon):
         iconpath = os.path.join(get_artwork_dir(), 'icons')
         self.managericon = QtGui.QIcon()
         self.managericon.addFile(os.path.join(iconpath, 'go-home'), QtCore.QSize(16, 16))
-        self.managerAction = QtWidgets.QAction(self.managericon, 'Manager', self.left_menu)
+        self.managerAction = QtGui.QAction(self.managericon, 'Manager', self.left_menu)
 
         self.exiticon = QtGui.QIcon()
         self.exiticon.addFile(os.path.join(iconpath, 'application-exit'), QtCore.QSize(16, 16))
-        self.quitAction = QtWidgets.QAction(self.exiticon, 'Quit', self.right_menu)
+        self.quitAction = QtGui.QAction(self.exiticon, 'Quit', self.right_menu)
 
         self.restarticon = QtGui.QIcon()
         self.restarticon.addFile(os.path.join(iconpath, 'view-refresh'), QtCore.QSize(16, 16))
-        self.restartAction = QtWidgets.QAction(self.restarticon, 'Restart', self.right_menu)
+        self.restartAction = QtGui.QAction(self.restarticon, 'Restart', self.right_menu)
 
         self.left_menu.addAction(self.managerAction)
         self.left_menu.addSeparator()
@@ -92,7 +92,7 @@ class SystemTrayIcon(QtWidgets.QSystemTrayIcon):
             iconpath = os.path.join(get_artwork_dir(), 'icons')
             icon.addFile(os.path.join(iconpath, 'go-next'))
 
-        action = QtWidgets.QAction(label)
+        action = QtGui.QAction(label)
         action.setIcon(icon)
         action.triggered.connect(callback)
         self.left_menu.addAction(action)
@@ -129,6 +129,8 @@ class Gui(QtCore.QObject):
             theme = 'qudiTheme'
 
         super().__init__()
+
+        
 
         app = QtWidgets.QApplication.instance()
         if app is None:

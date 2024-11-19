@@ -42,11 +42,11 @@ class ParameterEditor(QtWidgets.QWidget):
         parameters = inspect.signature(func).parameters
         for row, (name, param) in enumerate(parameters.items()):
             label = QtWidgets.QLabel(f'{name}:')
-            label.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
+            label.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight | QtCore.Qt.AlignmentFlag.AlignVCenter)
             editor = ParameterWidgetMapper.widget_for_parameter(param)
             if editor is None:
                 editor = QtWidgets.QLabel('Unknown argument type!')
-                editor.setAlignment(QtCore.Qt.AlignCenter)
+                editor.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
             else:
                 editor = editor()
                 # Attempt to set default value

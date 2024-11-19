@@ -75,7 +75,7 @@ class TaskWidget(QtWidgets.QWidget):
         self._play_icon = QtGui.QIcon(os.path.join(icon_dir, 'media-playback-start'))
         self._stop_icon = QtGui.QIcon(os.path.join(icon_dir, 'media-playback-stop'))
         self.state_label = QtWidgets.QLabel('stopped')
-        self.state_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.state_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         font = self.state_label.font()
         font.setBold(True)
         self.state_label.setFont(font)
@@ -95,9 +95,9 @@ class TaskWidget(QtWidgets.QWidget):
         self.running_indicator.setSizePolicy(tmp)
         ctrl_layout = QtWidgets.QVBoxLayout()
         ctrl_layout.addStretch(1)
-        ctrl_layout.addWidget(self.running_indicator, 0, QtCore.Qt.AlignCenter)
+        ctrl_layout.addWidget(self.running_indicator, 0, QtCore.Qt.AlignmentFlag.AlignCenter)
         ctrl_layout.addWidget(self.state_label)
-        ctrl_layout.addWidget(self.run_interrupt_button, 0, QtCore.Qt.AlignCenter)
+        ctrl_layout.addWidget(self.run_interrupt_button, 0, QtCore.Qt.AlignmentFlag.AlignCenter)
         self.running_indicator.hide()
 
         self.run_interrupt_button.clicked.connect(self._run_interrupt_clicked)
@@ -131,7 +131,7 @@ class TaskWidget(QtWidgets.QWidget):
                 editor = editor()
                 # ToDo: Set default values here
             label = QtWidgets.QLabel(f'{param_name}:')
-            label.setAlignment(QtCore.Qt.AlignVCenter | QtCore.Qt.AlignRight)
+            label.setAlignment(QtCore.Qt.AlignmentFlag.AlignVCenter | QtCore.Qt.AlignmentFlag.AlignRight)
             param_widgets[param_name] = (label, editor)
         return param_widgets
 
