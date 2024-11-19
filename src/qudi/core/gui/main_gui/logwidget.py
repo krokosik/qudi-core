@@ -194,8 +194,8 @@ class LogWidget(QtWidgets.QSplitter):
         # connect signals
         self.filter_treewidget.itemChanged.connect(self.update_filter_state)
 
-    @QtCore.Slot(object, int)
-    def update_filter_state(self, item, column):
+    # @QtCore.Slot(object, int)
+    def update_filter_state(self, item: QtCore.QObject, column: int):
         """Update log view from filter widget check states and synchronize check box states.
 
         @param int item: Item number
@@ -204,7 +204,7 @@ class LogWidget(QtWidgets.QSplitter):
         # check all / uncheck all state
         show_all_item = self.filter_treewidget.topLevelItem(0)
         level_items = [show_all_item.child(ii) for ii in range(show_all_item.childCount())]
-        if item is show_all_item:
+        if item is show_all_item and show_all_item:
             self.filter_treewidget.expandItem(item)
             if show_all_item.checkState(0):
                 self.filter_treewidget.blockSignals(True)
