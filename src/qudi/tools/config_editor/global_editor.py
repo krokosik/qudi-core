@@ -40,7 +40,7 @@ class GlobalEditorWidget(QtWidgets.QStackedWidget):
         font.setBold(True)
         font.setPointSize(font.pointSize() + 4)
         self.placeholder_label.setFont(font)
-        self.placeholder_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.placeholder_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.placeholder_label.setSizePolicy(QtWidgets.QSizePolicy.Expanding,
                                              QtWidgets.QSizePolicy.Expanding)
         self.addWidget(self.placeholder_label)

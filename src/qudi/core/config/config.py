@@ -27,7 +27,6 @@ import copy
 from numbers import Number
 from qtpy import QtCore
 from typing import Mapping, Optional, Union, Sequence, Set, List, MutableMapping, Any
-from collections.abc import MutableMapping as _MutableMapping
 from qudi.core.meta import ABCQObjectMeta as _ABCQObjectMeta
 
 from .validator import ValidationError
@@ -42,7 +41,6 @@ _OptionType = Union[Sequence, Mapping, Set, Number, str]
 
 
 class Configuration(_FileHandlerBase,
-                    _MutableMapping,
                     QtCore.QObject,
                     metaclass=_ABCQObjectMeta):
     """ QObject subclass representing a valid qudi configuration.

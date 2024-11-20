@@ -266,7 +266,7 @@ class ToggleSwitch(QtWidgets.QAbstractButton):
                        self.height() / 2 - self._track_radius,
                        self.width() - 2 * self._track_margin,
                        2 * self._track_radius,
-                       QtCore.Qt.AlignCenter,
+                       QtCore.Qt.AlignmentFlag.AlignCenter,
                        self.current_state)
 
         # draw thumb
