@@ -22,15 +22,17 @@ If not, see <https://www.gnu.org/licenses/>.
 __all__ = ['Connector']
 
 import weakref
-from typing import Any, Type, Union
+from typing import Any, Union, TypeVar, Generic
 from qudi.util.overload import OverloadProxy
+from qudi.core.module import Base
 
+T = TypeVar('T', bound=Base)
 
-class Connector:
+class Connector(Generic[T]):
     """ A connector used to connect qudi modules with each other.
     """
 
-    def __init__(self, interface: Union[str, Type], name: str = None, optional: bool = False):
+    def __init__(self, interface: Union[str, type[T]], name: str = None, optional: bool = False):
         """
         @param str interface: name of the interface class to connect to
         @param str name: optional, name of the connector in qudi config. Will set attribute name if
@@ -52,7 +54,7 @@ class Connector:
         if self.name is None:
             self.name = name
 
-    def __call__(self) -> Any:
+    def __call__(self) -> T:
         """ Return reference to the module that this connector is connected to. """
         if self.is_connected:
             return self._obj_proxy
