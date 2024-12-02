@@ -22,11 +22,13 @@ If not, see <https://www.gnu.org/licenses/>.
 __all__ = ['Connector']
 
 import weakref
-from typing import Any, Union, TypeVar, Generic
+from typing import TYPE_CHECKING, Any, Union, TypeVar, Generic
 from qudi.util.overload import OverloadProxy
-from qudi.core.module import Base
-
-T = TypeVar('T', bound=Base)
+if TYPE_CHECKING:
+    from qudi.core.module import Base
+    T = TypeVar('T', bound=Base)
+else:
+    T = TypeVar('T')
 
 class Connector(Generic[T]):
     """ A connector used to connect qudi modules with each other.
